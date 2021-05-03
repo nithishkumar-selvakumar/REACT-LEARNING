@@ -1,0 +1,20 @@
+function person(name){
+  this.name=name
+}//TRADIOTANIOL JAVASCRIPT FUNCTIONS
+
+var obj =new person('siva')
+
+console.log(obj)
+
+class Person1{
+  constructor(name){
+    this.name=name
+  }
+}//ES6 JAVASCRIPT CONSTRUCTOR
+
+class Per2 extends Person1 {
+ constructor(){} 
+}
+var p2 = new Per2('nith')
+console.log(p2)//IN ES7 WE CAN CREATE CONSTRUCTOR IN PARENT CLASS,WE DON'T NEED TO CREATE CONSTRUCTOR IN CHILD CLASS,
+//IT WILL CREATE  CONSTRUCTOR AUTOMATICALLY
