@@ -1,0 +1,53 @@
+############################################################################  ROOT.JS  ################################################################################################
+import React, { Component } from "react";
+import "./index.css";
+class Header extends Component {
+  render() {
+    return <h1>heading tag!!</h1>;
+  }
+}
+class Navabr extends Component {
+  render() {
+    return (
+      <>
+        <h2>navigation bar!!</h2>
+        <Header />
+      </>
+    );
+  }
+}
+class Footer extends Component {
+  render() {
+    return (
+      <>
+        <h3>footer section!!</h3>
+        <Navabr />
+      </>
+    );
+  }
+}
+export default Footer;
+###################################################################################  INDEX.JS  ###########################################################################################
+import React from "react";
+import ReactDOM from "react-dom";
+//import Tags from "./root";
+import Footer from "./root";
+import App1 from "./app1";
+
+import "./index.css";
+import tags from "./root";
+
+class Temp extends React.Component {
+  render() {
+    return (
+      <>
+        {" "}
+        <h1>finally!!</h1>
+        <Footer />
+        <App1 />
+      </>
+    );
+  }
+}
+ReactDOM.render(<Temp />, document.getElementById("root"));
+
