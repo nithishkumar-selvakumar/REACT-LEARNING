@@ -1,0 +1,53 @@
+#DAY1
+#REACT FORMATTER {<></>} IN JSX THIS TAG IS USED TO REPLACE THE DIV TAG
+###########################################################     ROOT.JS    #####################################################################################################
+import React from "react";
+import "./index.css";
+const Header = () => {
+  return <h1 className="header">heading tag</h1>;
+};
+const Navbar = () => {
+  return <h2 className="navbar"> navbar</h2>;
+};
+const Footer = () => {
+  return <h3 className="footer">footer page!!</h3>;
+};
+const Tags = () => {
+  return (
+    <>
+      <Header />
+      <Navbar />
+      <Footer />
+    </>
+  );
+};
+export default Tags;
+##################################################################   INDEX.JS    ##############################################################################################
+import React from "react";
+import ReactDOM from "react-dom";
+import Tags from "./root";
+
+import "./index.css";
+import tags from "./root";
+
+const myele = (
+  <div>
+    <h1 className="header">hai am nithish{3 + 4}</h1>
+    <h2>from:stp</h2>
+  </div>
+);
+ReactDOM.render(<Tags />, document.getElementById("root"));
+#######################################################################  INDEX.JS   ######################################################################################################
+.header {
+  color: rebeccapurple;
+  text-align: justify;
+  text-decoration: rgba(red, green, blue, alpha);
+}
+.navbar {
+  color: yellowgreen;
+  text-align: justify;
+}
+.footer {
+  color: burlywood;
+  text-align: justify;
+}
