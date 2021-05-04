@@ -1,0 +1,70 @@
+NOTE:
+1.ERROR:"CANNOT READ PROPERTY SETSTATE UNDIFINED"
+WHILE USING THE SETSTATE METHOD MUST CAN USE ARROW FUNCTION =>ARROW FUNCTION IS ONLY RETURN THE OBJECT
+IN NORMAL FUNCTION CANNOT REPRESENT THE OBJECTS.
+ONLY ARROW FUNCTION COULD REPRESEWNT THE OBJECTS.
+
+2.HOW TO PASS ARGUMENT IN EVENTHANDLING?(ANONYMOUS FUNCTION )
+*INSIDE THE ONCLICK FUNCTION WE NEED TO CREATE A ANNONYMOUS FUNCTION 
+SYNTAX:
+CLICK=(A)=>{
+THIS.SETSTATE({NAME=A})} //A IS THE PASSING ARGUMETS!!
+<BUTTON ONCLICK={()=>THIS.CLICK("NEED TO PASS THE ARGUMENTS HERE")}></BUTTON>
+
+3.ANOTHER WAY TO PASS ARGUMENTS VIA EVENT HANDLING? {BIND METHOD}
+*WHILE USING BIND METHOD WE NEED TO PASS TWO PARAMETER ONE IS "THIS" AND ONOTHER ONE IS "PASSING VALUE"
+
+################################################################## ARGUMENTS PASSING VIA EVENTHANDLING ################################################################################################
+import React from "react";
+class Az extends React.Component {
+  constructor() {
+    super();
+    this.state = { message: "welcome !!" };
+  }
+  click = (A) => {
+    this.setState({ message: A });
+  };
+  render() {
+    return (
+      <>
+        <h1>{this.state.message}demo user!!</h1>
+        <br />
+        <button
+          onClick={() => this.click("EVENT HANDLING ARGUMENT PASSING FUNCTION")}
+        >
+          click me!!
+        </button>
+      </>
+    );
+  }
+}
+export default Az;
+#####################################################################  BIND METHOD IS USED TO PASS THE VALIUE ###########################################################################################
+import React from "react";
+class Az extends React.Component {
+  constructor() {
+    super();
+    this.state = { message: "welcome !!" };
+  }
+  click = (A) => {
+    this.setState({ message: A });
+  };
+  render() {
+    return (
+      <>
+        <h1>{this.state.message}demo user!!</h1>
+        <br />
+        <button
+          onClick={this.click.bind(
+            this,
+            "EVENT HANDLING ARGUMENT PASSING FUNCTION"
+          )}
+        >
+          click me!!
+        </button>
+      </>
+    );
+  }
+}
+export default Az;
+
