@@ -1,0 +1,34 @@
+###################################################################  EMP3.JS  #######################################################################################################
+import React from "react";
+class Ex extends React.Component {
+  render() {
+    return (
+      <>
+        <h1>
+          welocme {this.props.name}and {this.props.id}
+        </h1>
+      </>
+    );
+  }
+}
+class Ex1 extends React.Component {
+  render() {
+    const v = "user";  //VARIABLE DECLARATION IN CHILD CLASSS
+    return <Ex name />;
+  }
+}
+export default Ex;
+#####################################################################   INDEX.JS   ###################################################################################################
+
+import React from "react";
+import ReactDOM from "react-dom";
+//import Tags from "./root";
+import Footer from "./root";
+import Aa from "./emp";
+import Emp2 from "./emp2";
+import Ex from "./emp3";
+import Ex1 from "./emp3";
+
+
+Ex.defaultProps = { id: 100 };  //SET DEAFAULT PROPS:
+ReactDOM.render(<Ex name="nithish" />, document.getElementById("root"));
