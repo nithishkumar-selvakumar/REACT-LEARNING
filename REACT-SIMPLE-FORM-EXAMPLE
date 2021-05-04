@@ -1,0 +1,44 @@
+##############################################################################  EMP7.JS  #######################################################################################
+
+import React from "react";
+class Final extends React.Component {
+  constructor() {
+    super();
+    this.state = { username: "", age: null, errmsg: "" };
+  }
+  Uservalue = (event) => {
+    let a = event.target.name;  //DYNAMICALLY ALLOCATE THE VARIABLE 
+    let b = event.target.value;
+    let err = "";
+    if (a === "age") { 
+      if (b != "" && !Number(b)) {          
+        err = <strong>invalid credential!! </strong>;
+      }
+    }
+    this.setState({ [a]: b });     ##STORES THE DATA DYNAMICALLY INTO THE ARRAY
+    this.setState({ errmsg: err });
+  };
+  Submit = (event) => {
+    event.preventDefault();
+    alert(
+      `"your name is"${this.state.username} and your age is ${this.state.age}`
+    );
+  };
+  render() {
+    return (
+      <>
+        <form onSubmit={this.Submit}>
+          <h1>welcome!!{this.state.username}</h1>
+          enter ur name:
+          <input type="text" name="username" onChange={this.Uservalue} />
+          enter ur age :
+          <input type="text" name="age" onChange={this.Uservalue} />
+          {this.state.errmsg}
+          <input type="submit" />
+        </form>
+      </>
+    );
+  }
+}
+export default Final;
+#############################################################################################################################################################################
