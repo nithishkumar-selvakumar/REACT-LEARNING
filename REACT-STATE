@@ -1,0 +1,38 @@
+###############################################################################  EMP4.JS  ####################################################################################
+import Rect from "react";
+class Ni extends Rect.Component {
+  constructor() {
+    super();
+    this.state = { Intialvalue: "welcome" };
+  }
+  ChangeValue = () => {
+    this.setState({ Intialvalue: "bye" }); //IMPORTANT
+  };
+  render() {
+    return (
+      <>
+        <h1>hai mr.nithish {this.state.Intialvalue}</h1>
+        <br />
+        <button type="button" onClick={this.ChangeValue}>
+         
+          Exit
+        </button>
+      </>
+    );
+  }
+}
+export default Ni;
+
+#######################################################################  INDEX.JS ##################################################################################################
+import React from "react";
+import ReactDOM from "react-dom";
+//import Tags from "./root";
+import Footer from "./root";
+import Aa from "./emp";
+import Emp2 from "./emp2";
+import Ex from "./emp3";
+import Ex1 from "./emp3";
+import Sta from "./emp4";
+import Ni from "./emp4";
+Ex.defaultProps = { id: 100 };
+ReactDOM.render(<Ni />, document.getElementById("root"));
