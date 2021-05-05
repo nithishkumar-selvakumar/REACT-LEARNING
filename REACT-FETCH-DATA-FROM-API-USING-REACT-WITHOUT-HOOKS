@@ -1,0 +1,42 @@
+###################################################################################################################################################################################
+import React from "react";
+import ReactDOM from "react-dom";
+class Api extends React.Component {
+  constructor() {
+    super();
+    this.state = { res: [], loading: false }; //this.state = { loading: false, result: [] };
+  }
+  async componentDidMount() {
+    const url = "https://www.stocks.akhil.cc//v1/list";
+    const response = await fetch(url);
+    const data = await response.json();
+
+    this.setState({ res: data, loading: true });
+  }
+  render() {
+    var { res = [], loading } = this.state;
+    //this.state = { loading: false, result: [] };
+    console.log(res);
+    if (!loading) {
+      return <h1>loding data!!</h1>;
+    } else {
+      return (
+        <>
+          <ul>
+            {res.map((val) => {
+              return (
+                <li>
+                  key : {val.symbol} || marketCap : {val.marketCap} || price :{" "}
+                  {val.price}
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      );
+    }
+  }
+}
+
+ReactDOM.render(<Api />, document.getElementById("root"));
+#################################################################################################################################################################################
