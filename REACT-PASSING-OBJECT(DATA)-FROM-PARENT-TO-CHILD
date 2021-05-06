@@ -1,0 +1,45 @@
+import React from "react";
+import ReactDOM from "react-dom";
+class Parent extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      data: [
+        { name: "nithish", age: 10, city: "cdm" },
+        { name: "kutty", age: 32, city: "stp" },
+        { name: "raj", age: 40, city: "svm" },
+      ],
+    };
+  }
+  render() {
+    const { data } = this.state;
+    return <Child value={data} />;
+  }
+}
+
+class Child extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { newdata: this.props.value };
+  }
+  render() {
+    const { newdata } = this.state;
+    return (
+      <>
+        {newdata.map((li) => {
+          return (
+            <>
+              <ul>
+                <li>{li.name}</li>
+                <li>{li.age}</li>
+                <li>{li.city}</li>
+              </ul>
+            </>
+          );
+        })}
+      </>
+    );
+  }
+}
+ReactDOM.render(<Parent />, document.getElementById("root"));
