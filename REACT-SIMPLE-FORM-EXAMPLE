@@ -42,3 +42,4 @@ class Final extends React.Component {
 }
 export default Final;
 #############################################################################################################################################################################
+reference:https://dev.to/dipakkr/how-to-pass-data-from-one-component-to-other-component-in-react-35i2
