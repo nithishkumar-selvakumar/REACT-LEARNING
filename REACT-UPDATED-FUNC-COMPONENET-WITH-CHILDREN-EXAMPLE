@@ -1,0 +1,42 @@
+###########################################################################################################################################################################
+import React from "react";
+import ReactDOM from "react-dom";
+import Func from "./func1";
+class Parent extends React.Component {
+  render() {
+    return (
+      <>
+        <h1>line one</h1>
+        <Func name="kutty" />
+        <Func name="ramesh">
+          <>
+            <h1>myskills</h1>
+            <h4>i knw java</h4>
+            <Func name="adengappa!!" />
+            <h5>python</h5>
+          </>
+        </Func>
+        <h2>line two</h2>
+        <h3>line three</h3>
+        <h4>line four</h4>
+        <h5>line five</h5>
+      </>
+    );
+  }
+}
+export default Parent;
+ReactDOM.render(<Parent />, document.getElementById("root"));
+//export default Parent;
+
+###########################################################################################################################################################################
+import React from "react";
+//import Parent from "./index";
+const Func = (props) => {
+  return (
+    <>
+      <h1>hai am {props.name} function</h1>
+      <h4>{props.children}</h4>
+    </>
+  );
+};
+export default Func;
