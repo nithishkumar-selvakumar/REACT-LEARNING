@@ -1,0 +1,67 @@
+########################################################################################################################
+index.js
+import React from "react";
+import ReactDOM from "react-dom";
+import Child from "./func1";
+import Grand from "./func2";
+class Parent extends React.Component {
+  state = {
+    name: "nithish",
+  };
+
+  Handleevent = (a) => {
+    this.setState({ name: a });
+  };
+  Vera = (f) => {
+    this.setState({ name: f });
+  };
+  render() {
+    return (
+      <>
+        <Child
+          Veralevel={this.Vera.bind(this, "s.nithish")}
+          Events={this.Handleevent.bind(this, "nithishkumar")}
+          name={this.state.name}
+        />
+        <Grand
+          Veralevel={this.Vera.bind(this, "dr.jessyrani")}
+          Events={this.Handleevent.bind(this, "jc")}
+          name={this.state.name}
+        />
+      </>
+    );
+  }
+}
+ReactDOM.render(<Parent />, document.getElementById("root"));
+
+
+#########################################################################################################################
+func1.js
+import React from "react";
+import Grand from "./func2";
+const Child = (props) => {
+  return (
+    <>
+      <h1>hai myself {props.name}</h1>
+      <button onClick={props.Events}> break!!</button>
+      <button onClick={props.Veralevel}>Lunch!!</button>
+      <Grand />
+    </>
+  );
+};
+export default Child;
+########################################################################################################################
+func2.js
+import React from "react";
+//import Grand from "./func2";
+const Grand = (props) => {
+  return (
+    <>
+      <h1>hai myself {props.name}</h1>
+      <button onClick={props.Events}> break!!</button>
+      <button onClick={props.Veralevel}>Lunch!!</button>
+    </>
+  );
+};
+export default Grand;
+#####################################################################################################################
