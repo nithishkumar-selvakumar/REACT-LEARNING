@@ -1,0 +1,69 @@
+######################################################################################################################################################################
+import React from "react";
+import ReactDom from "react-dom";
+import Child1 from "./func2";
+import Child from "./func1";
+class Parent extends React.Component {
+  state = { namegiven: "", name: "", ename: "manoj" };
+  Handlechange = (e) => {
+    this.setState({ name: e.target.value });
+  };
+  Event = (e) => {
+    console.log(e);
+    this.setState({ namegiven: e });
+  };
+  Handlechange1 = (ew) => {
+    this.setState({ name: ew });
+  };
+  render() {
+    return (
+      <>
+        <h1>{this.state.name} here!!</h1>
+        enter ur name:
+        <input type="text" onChange={this.Handlechange} />
+        <Child1
+          name={this.Event.bind(this, "jadon josh!!")}
+          jname={this.state.name}
+          temp={this.state.namegiven}
+        />
+        <Child
+          name={this.Handlechange1.bind(this, "muthusundharam")}
+          temp={this.state.name}
+          jname={this.state.ename}
+        />
+      </>
+    );
+  }
+}
+ReactDom.render(<Parent />, document.getElementById("root"));
+##########################################################################################################################################################
+import React from "react";
+const Child1 = (props) => {
+  return (
+    <>
+      <h1>
+        {props.jname} {props.temp}
+      </h1>
+      <button type="button" onClick={props.name}>
+        click me!!
+      </button>
+    </>
+  );
+};
+export default Child1;
+#######################################################################################################################################################################
+import React from "react";
+import Grand from "./func2";
+const Child = (props) => {
+  return (
+    <>
+      <h1>
+        {props.jname} !!{props.temp}
+      </h1>
+      <button onClick={props.name}> break!!</button>
+    </>
+  );
+};
+export default Child;
+
+
