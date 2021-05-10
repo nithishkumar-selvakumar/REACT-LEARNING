@@ -1,0 +1,27 @@
+###########################################################################################################################################################################
+import React, { useState } from "react";
+const Child1 = (props) => {
+  const intialvalue = 0;
+  const [count, setname] = useState(intialvalue);
+  const Handlechange = () => {
+    setname(count + 1);
+  };
+  const Handlechange1 = () => {
+    setname(count - 1);
+  };
+  const Handlechange2 = () => {
+    setname(intialvalue);
+  };
+  return (
+    <>
+      <h1> {count}</h1>
+      <br />
+      <button onClick={Handlechange}>increment</button>
+      <button onClick={() => setname(count - 1)}>decremet</button>
+      <button onClick={Handlechange2}>reset</button>
+    </>
+  );
+};
+export default Child1;
+
+###########################################################################################################################################################################
