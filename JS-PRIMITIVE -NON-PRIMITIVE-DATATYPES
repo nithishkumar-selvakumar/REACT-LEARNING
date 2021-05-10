@@ -1,0 +1,35 @@
+########################################################################################################################################################################
+const ={name:'x',age:20,place:{streetname:'y',streetnum:10}}
+=>shallow coppy and deep coppy:
+in shallow coppy =>they can accees the primary property(variables) like name,age,place
+in deep coppy => they can access the primary property and secondary property like name,age,place{streetname,streetnum} =>it can access all the property
+=> in javascript don't have deep coppy method 
+
+##########################################################################################################################################################################
+javascript datatypes:
+1=>primitive(string,number,boolean)  =>pass by value
+2=>non -primirive(object,array)  =>pass by reference
+
+example: =>pass by value
+var a=10; //a=10
+var b=a; //b=10
+var b=20 //b=20
+print(b) //20
+print(a)//10
+
+=>in primitive data type it can pass the value
+
+
+example : pass by reference:
+var a="nithish";
+var b=a;
+print(a) =>nithish
+print(b)  =>nithish
+var b="kumar"
+print(b)  =>kumar
+print(a)  =>kumar
+
+=>in non primitive data types  =>it cannot pass the value it can pass only  the references 
+
+###########################################################################################################################################################################
+set state vs usestate:
