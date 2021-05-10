@@ -1,0 +1,42 @@
+###########################################################################################################################################################################
+
+import React from "react";
+class Demo extends React.Component {
+  constructor() {
+    super();
+    this.state = { username: "default", secondname: "default" };
+  }
+  Namechange = (e) => {
+    this.setState({ username: e.target.value });
+  };
+  Endfunc = () => {
+    this.setState({ username: "first user left" });
+  };
+  Secondnamechange = (e) => {
+    this.setState({ secondname: e.target.value });
+  };
+  Endfunc2 = () => {
+    this.setState({ secondname: "second user left!!" });
+  };
+  render() {
+    return (
+      <>
+        enter user1 name:
+        <input type="text" onChange={this.Namechange} />
+        <br />
+        <button onClick={this.Endfunc}>exit</button>
+        <br />
+        enter user2 name:
+        <input type="text" onChange={this.Secondnamechange}></input>
+        <br />
+        <button onClick={this.Endfunc2}>exit2</button>
+        <br />
+        <h1>welcome {this.state.username}</h1>
+        <h1>welcome {this.state.secondname}</h1>
+      </>
+    );
+  }
+}
+export default Demo;
+
+###########################################################################################################################################################################
