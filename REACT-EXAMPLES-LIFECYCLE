@@ -1,0 +1,64 @@
+###########################################################################################################################################################################
+PHASES IN REACT:
+=>MOUNTING {
+1.COMPONENTWILLMOUNT:=>BEFORE RENDER METHOD WILLMOUNT SHULD BE CALLED!!
+2.COMPONENTDIDMOUNT :=>FIRST THE RENDER METHOD IS CALLED AND THEN DID MOUNT SHOULD BE CALLED!!
+}
+=>UNMOUNTING{
+3.componentwillunmount:=>IT IS USED TO TERMINATE THE COMPONENT
+}
+=>UPDATEING{
+4.componentWillUpdate:=>ONCE THE COMPONENT SHOULD BE RENDERED it should be executed.every component render method it should be executed
+5.componentDidUpdate:=>
+6.shouldComponentUpdate:=>WHEN THE COMPONENT WORK IS DONE IT IS USED TO TERMINATE THE COMPONENT :IF U GIVEN THE BOOLEAN VALUE IS TRUE COMPONENT SHOULD BE ALLOWED TO RERENDER ELSE YOU CAN GIVE
+BOOLEAN VALUE IS FALSE IT WILL NOT ALLOW TO RENDER THE COMPONENT
+}
+###########################################################################################################################################################################
+
+import React from "react";
+class Demo extends React.Component {
+  constructor() {
+    super();
+    this.state = { value: "welcome", name: "guys" };
+  }
+  componentWillMount() {
+    alert("componeent will mount on!!");
+  }
+  Handlecheck = () => {
+    this.setState({ value: "learn react in tamil" });
+  };
+  Deleteevent = () => {
+    this.setState({ value: "deleted", name: false });
+  };
+  render() {
+    console.log(" render console on!!");
+    return (
+      <>
+        <h1>
+          {this.state.value} {this.state.name}
+        </h1>
+        <button onClick={this.Handlecheck}>click me!!</button>
+        <button onClick={this.Deleteevent}>delete header</button>
+      </>
+    );
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ value: "thank you" });
+    }, 5000);
+  }
+  componentWillUpdate() {
+    alert("DO U WANT TO ADD A VALUE!!");
+  }
+  componentDidUpdate() {
+    document.getElementById("mydiv").innerHTML =
+      "new value updated successfully" + this.state.value;
+  }
+  shouldComponentUpdate() {
+    return true;
+  }
+  componentWillUnmount() {
+    alert("header deleted!!");
+  }
+}
+export default Demo;
