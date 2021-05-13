@@ -1,0 +1,112 @@
+#####################################################################   REEACT-LIST-KEY --##################################################################
+import React from "react";
+const List = () => {
+  const person = [
+    { id: 1, name: "nithish" },
+    { id: 2, name: "kumar" },
+    { id: 3, name: "magesh" },
+    { id: 4, name: "arun" },
+    { id: 5, name: "jahan" },
+    { id: 6, name: "sathish" },
+  ];
+  return (
+    <>
+      <ul>
+        {person.map((data) => {
+          return <li key={data.id}>{data.name}</li>;    //array of data must have contain one unique value.
+                                                        // that unique value is used to assingn the key value
+        })}
+      </ul>
+    </>
+  );
+};
+
+export default List;
+##########################################################################  assign key value using index  #####################################################
+importt React from "react";
+const List = () => {
+  const person = [
+    { id: 1, name: "nithish" },
+    { id: 2, name: "kumar" },
+    { id: 3, name: "magesh" },
+    { id: 4, name: "arun" },
+    { id: 5, name: "jahan" },
+    { id: 6, name: "sathish" },
+  ];
+  return (
+    <>
+      <ul>
+        {person.map((data, index) => {
+          return <li key={index}>{data.name}</li>;// list of data does't have a unique value we can use index key word is used to assingn the key
+        })}
+      </ul>
+    </>
+  );
+};
+#################################################################  accessing-nested-list-data   ####################################################################################
+
+import React from "react";
+const List = () => {
+  const developer = [
+    {
+      name: "sathish",
+      skills: [
+        { name: "angular", type: "frontend" },
+        { name: "nodejs", type: "backend" },
+      ],
+    },
+    {
+      name: "nithish",
+      skills: [
+        {
+          name: "react",
+          type: "frontend",
+        },
+        {
+          name: "nodejs",
+          type: "backend",
+        },
+      ],
+    },
+  ];
+  return (
+    <>
+      <ul>
+        {developer.map((data, index) => {
+          return (
+            <>
+              <h1 key={index}>{data.name}</h1>
+              <li>
+                {data.skills.map((skill, index) => {
+                  return (
+                    <li key={index}>
+                      {" "}
+                      {skill.name} - {skill.type}{" "}
+                    </li>
+                  );
+                })}
+              </li>
+            </>
+          );
+        })}
+      </ul>
+    </>
+  );
+};
+
+export default List;
+##############################################################################  how to access the object value using map function #################################################################################
+
+import React from "react";
+const List = () => {
+  const value = { name: "nithish", from: "sethiyathope", to: "chennai" };
+  return (
+    <>
+      {Object.keys(value).map((data, index) => {
+        return <h1 key={index}>{value[data]}</h1>;
+      })}
+    </>
+  );
+};
+
+export default List;
