@@ -1,0 +1,70 @@
+#########################################################################################################################################################################
+
+import React, { useState } from "react";
+const Ui = () => {
+  const initalvalue = 0;
+  const [num1, num1func] = useState(initalvalue);
+  const [num2, num2func] = useState(initalvalue);
+  const [res, resfunc] = useState(initalvalue);
+  const Handle1change = (event) => {
+    num1func(event.target.value);
+  };
+  const Handle2change = (e) => {
+    num2func(e.target.value);
+  };
+  console.log(num1);
+  console.log(num2);
+
+  const add = () => {
+    let c = Number(num1) + Number(num2);
+    resfunc(c);
+  };
+
+  const sub = () => {
+    let c = Number(num1) - Number(num2);
+    resfunc(c);
+  };
+
+  const mul = () => {
+    let c = Number(num1) * Number(num2);
+    resfunc(c);
+  };
+
+  const div = () => {
+    let c = Number(num1) / Number(num2);
+    resfunc(c);
+  };
+  const clear = () => {
+    resfunc(initalvalue);
+    num1func(initalvalue);
+    num2func(initalvalue);
+  };
+
+  console.log(res);
+  return (
+    <div>
+      <div className="row">
+        <div className="col">
+          <input type="text" onChange={Handle2change} placeholder="one" />
+        </div>
+        <br></br>
+        <div>
+          <input type="text" onChange={Handle1change} placeholder="two" />
+        </div>
+        <br />
+      </div>
+      <div className="row">
+        <button onClick={add}>add</button>
+        <button onClick={sub}>sub</button>
+        <button onClick={mul}>mul</button>
+        <button onClick={div}>div</button>
+        <div className="col">
+          <button onClick={clear}>clear</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default Ui;
+
+##########################################################################################################################################################################
